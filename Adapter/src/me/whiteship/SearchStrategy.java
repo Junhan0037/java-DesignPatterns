@@ -35,3 +35,14 @@ class SearchStrategyMap implements SearchStrategy {
         // 지도검색하는 코드
     }
 }
+
+class SearchFindAdapter implements SearchStrategy {
+    private FindAlgorithm findAlgorithm;
+    public SearchFindAdapter(FindAlgorithm findAlgorithm) {
+        this.findAlgorithm = findAlgorithm;
+    }
+    @Override
+    public void search() {
+        findAlgorithm.find(true);
+    }
+}
